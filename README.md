@@ -11,4 +11,3 @@ Casual Chef is MERN app that makes it easier for people to meal prep and plan th
 * React
 * Node.js
 * Javascript
-
