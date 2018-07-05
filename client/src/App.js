@@ -6,6 +6,7 @@ import Button from "./components/Button";
 import API from "./utils/API";
 import { RecipeList, RecipeListItem } from "./components/RecipeList";
 import { Container, Row, Col } from "./components/Grid";
+import {formatTime} from "./helpers"
 
 class App extends Component {
   state = {
@@ -65,18 +66,18 @@ class App extends Component {
           </Row>
           <Row>
             <Col size="xs-12">
-              {!this.state.recipes.length ? (
+              {!Object.keys(this.state.recipes).length ? (
                 <h1 className="text-center">No Recipes to Display</h1>
               ) : (
                 <RecipeList>
-                  {this.state.recipes.map(recipe => {
+                  {this.state.recipes.matches.map(recipe => {
                     return (
                       <RecipeListItem
-                        key={recipe.title}
-                        title={recipe.title}
-                        href={recipe.href}
+                        key={recipe.id}
+                        title={recipe.recipeName}
                         ingredients={recipe.ingredients}
-                        thumbnail={recipe.thumbnail}
+                        thumbnail={recipe.smallImageUrls[0]}
+                        time={formatTime(recipe.totalTimeInSeconds)}
                       />
                     );
                   })}

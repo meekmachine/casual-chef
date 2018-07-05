@@ -13,9 +13,10 @@ export const RecipeListItem = props => (
         <Col size="xs-8 sm-9">
           <h3>{props.title}</h3>
           <p>Ingredients: {props.ingredients}</p>
-          <a rel="noreferrer noopener" target="_blank" href={props.href}>
+          <p>Time: {props.time} minutes</p>
+          {/* <a rel="noreferrer noopener" target="_blank" href={props.href}>
             Go to recipe!
-          </a>
+          </a> */}
         </Col>
       </Row>
     </Container>
