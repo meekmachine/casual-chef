@@ -1,4 +1,10 @@
 .jumbotron {
   min-height: 300px;
   padding-top: 100px;
+  background-color: transparent;
+}
+
+h1 {
+  color: white;
+  font-family: 'Lemon', cursive;
 }
