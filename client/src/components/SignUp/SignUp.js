@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignUpView = ({ onSubmit }) => {
+const SignUp = ({ onSubmit }) => {
   return (
     <div>
       <h1>Sign up</h1>
@@ -27,4 +27,4 @@ const SignUpView = ({ onSubmit }) => {
   );
 };
 
-export default SignUpView;
+export default SignUp;

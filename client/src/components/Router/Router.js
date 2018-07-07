@@ -4,23 +4,48 @@ import App from "../../App";
 import NotFound from "../NotFound";
 import Homepage from "../Homepage";
 import Login from "../Login";
-import SignUp from "..SignUp";
+import SignUp from "../SignUp";
+import PrivateRoute from "../../PrivateRoute";
+import app from "../../base";
 
-const Router = () => (
+
+class Router extends React.Component {
 	state = {
 		loading: true,
 		authenticated: false,
 		user: null
 	}
-    <BrowserRouter>
+    componentWillMount() {
+      app.auth().onAuthStateChanged(user => {
+        if (user) {
+          this.setState({
+            authenticated: true,
+            currentUser: user,
+            loading: false
+          });
+        } else {
+          this.setState({
+            authenticated: false,
+            currentUser: null,
+            loading: false
+          });
+        }
+      });
+    }
+    render(){
+        return (
+                <BrowserRouter>
         <Switch>
-            <PrivateRoute exact path = "/" component={Homepage} authenticated={this.state.authenticated}/>
-           	<Route exact path="/login" component={Login} />
-        	<Route exact path="/signup" component={SignUp} />
-            <Route path = "/recipes" component={App} />
+            <Route exact path = "/" component={Homepage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+            <PrivateRoute path = "/recipes" component={App} authenticated={this.state.authenticated} />
             <Route component={NotFound} />
         </Switch>
     </BrowserRouter>
-);
+            )
+    }
+}
+
 
 export default Router;
