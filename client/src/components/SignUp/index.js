@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import app from "../../base";
 
-import SignUpView from "./SignUpView";
+import SignUp from "./SignUp";
 
 class SignUpContainer extends Component {
   handleSignUp = async event => {
@@ -19,7 +19,7 @@ class SignUpContainer extends Component {
   };
 
   render() {
-    return <SignUpView onSubmit={this.handleSignUp} />;
+    return <SignUp onSubmit={this.handleSignUp} />;
   }
 }
 
