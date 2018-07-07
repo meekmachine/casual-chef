@@ -22,7 +22,7 @@ class Homepage extends React.Component {
               </p>
               <p className="lead">
                 <a href="/recipes" className="btn btn-lg btn-secondary">
-                  Learn more
+                  Let's get cookin'
                 </a>
               </p>
             </main>
