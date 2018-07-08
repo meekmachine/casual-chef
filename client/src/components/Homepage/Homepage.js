@@ -1,9 +1,7 @@
 import React from "react";
 import "./Homepage.css";
 
-class Homepage extends React.Component {
-    render () {
-        return <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+const Homepage = () => ( <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <header className="masthead mb-auto">
               <div className="inner">
                 <h3 className="masthead-brand">Casual Chef</h3>
@@ -26,9 +24,7 @@ class Homepage extends React.Component {
                 </a>
               </p>
             </main>
-          </div>;
-    }
-}
+          </div> );
 
 
 export default Homepage;
