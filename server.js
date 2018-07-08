@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 const MONGODB_URI = require("./config/keys");
-const mongoose = require("require");
+const mongoose = require("mongoose");
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,7 +21,7 @@ app.use("/api", apiRoutes);
 mongoose.Promise = global.Promise;
 
 mongoose.connect(
-	MONGODB_URI {
+	MONGODB_URI, {
 		useMongoClient: true
 	});
 
